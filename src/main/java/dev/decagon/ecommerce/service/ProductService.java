@@ -1,6 +1,7 @@
 package dev.decagon.ecommerce.service;
 
 import dev.decagon.ecommerce.dto.ProductDto;
+import dev.decagon.ecommerce.exceptions.ProductNotExistException;
 import dev.decagon.ecommerce.model.Category;
 import dev.decagon.ecommerce.model.Product;
 import dev.decagon.ecommerce.repository.ProductRepository;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -50,5 +52,12 @@ public class ProductService {
         product.setId(productID);
         // update
         productRepository.save(product);
+    }
+
+    public Product getProductById(Integer productId) throws ProductNotExistException {
+        Optional<Product> optionalProduct = productRepository.findById(productId);
+        if (optionalProduct.isEmpty())
+            throw new ProductNotExistException("Product id is invalid " + productId);
+        return optionalProduct.get();
     }
 }

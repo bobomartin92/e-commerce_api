@@ -1,4 +1,4 @@
-package dev.decagon.ecommerce.config;
+package dev.decagon.ecommerce.common;
 
 public class MessageStrings {
     public static final String AUTH_TOKEN_NOT_PRESENT = "authentication token not present";

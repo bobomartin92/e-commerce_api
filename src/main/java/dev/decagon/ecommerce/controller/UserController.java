@@ -4,7 +4,7 @@ import dev.decagon.ecommerce.dto.SignInDto;
 import dev.decagon.ecommerce.dto.SignInResponseDto;
 import dev.decagon.ecommerce.dto.SignUpResponseDto;
 import dev.decagon.ecommerce.dto.SignupDto;
-import dev.decagon.ecommerce.exceptions.AuthFailException;
+import dev.decagon.ecommerce.exceptions.AuthenticationFailException;
 import dev.decagon.ecommerce.exceptions.CustomException;
 import dev.decagon.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class UserController {
     }
 
     @PostMapping("/signin")
-    public SignInResponseDto SignIn(@RequestBody SignInDto signInDto) throws CustomException, AuthFailException {
+    public SignInResponseDto SignIn(@RequestBody SignInDto signInDto) throws CustomException, AuthenticationFailException {
         return userService.signIn(signInDto);
     }
 }

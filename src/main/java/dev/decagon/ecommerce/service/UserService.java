@@ -1,11 +1,11 @@
 package dev.decagon.ecommerce.service;
 
-import dev.decagon.ecommerce.config.MessageStrings;
+import dev.decagon.ecommerce.common.MessageStrings;
 import dev.decagon.ecommerce.dto.SignInDto;
 import dev.decagon.ecommerce.dto.SignInResponseDto;
 import dev.decagon.ecommerce.dto.SignUpResponseDto;
 import dev.decagon.ecommerce.dto.SignupDto;
-import dev.decagon.ecommerce.exceptions.AuthFailException;
+import dev.decagon.ecommerce.exceptions.AuthenticationFailException;
 import dev.decagon.ecommerce.exceptions.CustomException;
 import dev.decagon.ecommerce.model.AuthToken;
 import dev.decagon.ecommerce.model.User;
@@ -62,17 +62,17 @@ public class UserService {
         }
     }
 
-    public SignInResponseDto signIn(SignInDto signInDto) throws AuthFailException, CustomException {
+    public SignInResponseDto signIn(SignInDto signInDto) throws AuthenticationFailException, CustomException {
         // first find User by email
         User user = userRepository.findByEmail(signInDto.getEmail());
         if(!Objects.nonNull(user)){
-            throw new AuthFailException("user not present");
+            throw new AuthenticationFailException("user not present");
         }
         try {
             // check if password is right
             if (!user.getPassword().equals(hashPassword(signInDto.getPassword()))){
                 // passwords do not match
-                throw  new AuthFailException(MessageStrings.WRONG_PASSWORD);
+                throw  new AuthenticationFailException(MessageStrings.WRONG_PASSWORD);
             }
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();

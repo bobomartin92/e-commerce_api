@@ -1,7 +1,7 @@
 package dev.decagon.ecommerce.service;
 
-import dev.decagon.ecommerce.config.MessageStrings;
-import dev.decagon.ecommerce.exceptions.AuthFailException;
+import dev.decagon.ecommerce.common.MessageStrings;
+import dev.decagon.ecommerce.exceptions.AuthenticationFailException;
 import dev.decagon.ecommerce.model.AuthToken;
 import dev.decagon.ecommerce.model.User;
 import dev.decagon.ecommerce.repository.TokenRepository;
@@ -38,12 +38,12 @@ public class AuthService {
     }
 
     // check if the token is valid
-    public void authenticate(String token) throws AuthFailException {
+    public void authenticate(String token) throws AuthenticationFailException {
         if (!Objects.nonNull(token)) {
-            throw new AuthFailException(MessageStrings.AUTH_TOKEN_NOT_PRESENT);
+            throw new AuthenticationFailException(MessageStrings.AUTH_TOKEN_NOT_PRESENT);
         }
         if (!Objects.nonNull(getUser(token))) {
-            throw new AuthFailException(MessageStrings.AUTH_TOKEN_NOT_VALID);
+            throw new AuthenticationFailException(MessageStrings.AUTH_TOKEN_NOT_VALID);
         }
     }
 }
