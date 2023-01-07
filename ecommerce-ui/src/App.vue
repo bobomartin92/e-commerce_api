@@ -1,18 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view v-if="products && categories"
-               :baseURL="baseURL"
-               :products="products"
-               :categories="categories"
-               @fetchData = "fetchData">
-  </router-view>
+  <div id="app">
+    <div id="nav">
+      <Navbar />
+    </div>
+    <div style="min-height: 60vh">
+      <router-view v-if="products && categories"
+                   :baseURL="baseURL"
+                   :products="products"
+                   :categories="categories"
+                   @fetchData = "fetchData">
+      </router-view>
+    </div>
+    <Footer />
+  </div>
 </template>
 
 <script>
+
 const axios = require('axios');
+import Navbar from "./components/Navbar.vue"
+import Footer from "./components/Footer.vue"
+
+
 export default {
   data() {
     return {
@@ -22,7 +31,7 @@ export default {
     }
   },
 
-  components : {},
+  components : { Navbar, Footer},
   methods : {
     async fetchData() {
       // fetch products
