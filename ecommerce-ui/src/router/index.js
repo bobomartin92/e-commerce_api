@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AddCategory from "@/views/Category/AddCategory.vue";
 import Category from "@/views/Category/Category.vue";
+import EditCategory from "@/views/Category/EditCategory.vue";
 
 const routes = [
   {
@@ -27,6 +28,12 @@ const routes = [
     name: "AdminCategory",
     component: Category,
   },
+  {
+    path: "/admin/category/:id",
+    name: "EditCategory",
+    component: EditCategory,
+    props: true
+  }
 ]
 
 const router = createRouter({
