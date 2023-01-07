@@ -1,6 +1,6 @@
 package dev.decagon.ecommerce.service;
 
-import dev.decagon.ecommerce.common.MessageStrings;
+import dev.decagon.ecommerce.util.MessageStrings;
 import dev.decagon.ecommerce.exceptions.AuthenticationFailException;
 import dev.decagon.ecommerce.model.AuthToken;
 import dev.decagon.ecommerce.model.User;

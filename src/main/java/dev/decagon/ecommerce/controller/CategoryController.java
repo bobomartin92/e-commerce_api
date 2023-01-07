@@ -1,6 +1,6 @@
 package dev.decagon.ecommerce.controller;
 
-import dev.decagon.ecommerce.common.ApiResponse;
+import dev.decagon.ecommerce.util.ApiResponse;
 import dev.decagon.ecommerce.model.Category;
 import dev.decagon.ecommerce.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

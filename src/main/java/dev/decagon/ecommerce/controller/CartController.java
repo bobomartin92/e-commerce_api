@@ -1,6 +1,6 @@
 package dev.decagon.ecommerce.controller;
 
-import dev.decagon.ecommerce.common.ApiResponse;
+import dev.decagon.ecommerce.util.ApiResponse;
 import dev.decagon.ecommerce.dto.AddToCartDto;
 import dev.decagon.ecommerce.dto.CartDto;
 import dev.decagon.ecommerce.exceptions.AuthenticationFailException;

@@ -1,4 +1,4 @@
-package dev.decagon.ecommerce.common;
+package dev.decagon.ecommerce.util;
 
 import java.time.LocalDateTime;
 

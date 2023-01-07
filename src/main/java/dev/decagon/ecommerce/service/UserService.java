@@ -1,6 +1,6 @@
 package dev.decagon.ecommerce.service;
 
-import dev.decagon.ecommerce.common.MessageStrings;
+import dev.decagon.ecommerce.util.MessageStrings;
 import dev.decagon.ecommerce.dto.SignInDto;
 import dev.decagon.ecommerce.dto.SignInResponseDto;
 import dev.decagon.ecommerce.dto.SignUpResponseDto;
