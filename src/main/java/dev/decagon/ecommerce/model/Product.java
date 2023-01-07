@@ -38,5 +38,4 @@ public class Product {
         this.description = description;
         this.category = category;
     }
-// setters and getters
 }
