@@ -4,6 +4,7 @@
       <img class="card-img-top embed-responsive-item" :src="product.imageURL" alt="Product Image">
     </div>
     <div class="card-body">
+      <router-link :to="{ name: 'ShowProduct', params: { id : product.id } }"><h5 class="card-title">{{product.name}}</h5></router-link>
       <h3 class="card-title">{{product.name}}</h3>
       <p class="card-text"><sup>$</sup>{{product.price}}</p>
       <p class="card-text font-italic">{{product.description.substring(0,65)}}...</p>

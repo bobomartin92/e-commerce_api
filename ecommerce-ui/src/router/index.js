@@ -6,6 +6,7 @@ import EditCategory from "@/views/Category/EditCategory.vue";
 import AddProduct from "@/views/Product/AddProduct.vue";
 import Product from "@/views/Product/Product.vue";
 import EditProduct from "@/views/Product/EditProduct.vue";
+import ShowProduct from "@/views/Product/ShowProduct.vue";
 
 const routes = [
   {
@@ -43,6 +44,12 @@ const routes = [
     path: "/admin/product/:id",
     name: "EditProduct",
     component: EditProduct,
+    props: true,
+  },
+  {
+    path : '/product/show/:id',
+    name : 'ShowProduct',
+    component: ShowProduct,
     props: true,
   }
 ]
