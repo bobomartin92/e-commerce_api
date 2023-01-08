@@ -56,4 +56,8 @@ public class CartService {
         // delete the cart item
         cartRepository.delete(cartItem);
     }
+
+    public void deleteUserCartItems(User user) {
+        cartRepository.deleteByUser(user);
+    }
 }
