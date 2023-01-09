@@ -7,6 +7,8 @@ import AddProduct from "@/views/Product/AddProduct.vue";
 import Product from "@/views/Product/Product.vue";
 import EditProduct from "@/views/Product/EditProduct.vue";
 import ShowProduct from "@/views/Product/ShowProduct.vue";
+import Signup from "@/views/Signup.vue";
+import Signin from "@/views/Signin.vue";
 
 const routes = [
   {
@@ -51,7 +53,17 @@ const routes = [
     name : 'ShowProduct',
     component: ShowProduct,
     props: true,
-  }
+  },
+  {
+    path: '/signup',
+    name: 'Signup',
+    component: Signup
+  },
+  {
+    path: '/signin',
+    name: 'Signin',
+    component: Signin
+  },
 ]
 
 const router = createRouter({
