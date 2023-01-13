@@ -87,10 +87,18 @@
             Accounts
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <router-link class="dropdown-item" v-if="!token" :to="{name: 'Signin'}">Wishlist</router-link>
+            <router-link class="dropdown-item" v-else :to="{name : 'WishList'}" >Wishlist</router-link>
             <router-link class="dropdown-item" v-if="!token" :to="{name: 'Signin'}">Log In</router-link>
             <router-link class="dropdown-item" v-if="!token" :to="{name: 'Signup'}">Sign Up</router-link>
             <a class="dropdown-item" v-if="token" href="#" @click="signout">Sign Out</a>
           </div>
+        </li>
+        <!--      Cart Icon-->
+        <li class="nav-item">
+          <router-link class="text-light" :to="{name : 'Cart'}">
+            <i class="fa fa-shopping-cart" style="font-size:36px"></i>
+          </router-link>
         </li>
       </ul>
     </div>
