@@ -20,8 +20,8 @@ export default {
       axios.post(this.baseURL+"order/add/?token="+this.token+"&sessionId="+this.sessionId)
           .then(()=>{
             // change message to order placed
-            console.log("Success");
-            document.getElementById("message").innerHTML = "order placed";
+            // document.getElementById("message").innerHTML = "order placed";
+            this.$router.push({ name: 'OrderHistory'})
             //router.push()
           }).catch((error)=>{
         console.log(error);
